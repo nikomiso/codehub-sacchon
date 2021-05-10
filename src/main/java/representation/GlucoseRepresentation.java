@@ -38,6 +38,7 @@ public class GlucoseRepresentation {
         if(date== null) date= new Date();
         glucose.setDate(date);
 
+        //TODO: Change it - No need of DB
         EntityManager em= JpaUtil.getEntityManager();
         PatientRepository patientRepository= new PatientRepository(em);
         glucose.setPatient(patientRepository.read(patientId));

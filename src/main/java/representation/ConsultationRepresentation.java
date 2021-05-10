@@ -48,6 +48,7 @@ public class ConsultationRepresentation {
         consultation.setDosage(dosage);
         consultation.setComment(comment);
 
+        //TODO: Change it - No need of DB
         EntityManager em = JpaUtil.getEntityManager();
         PatientRepository patientRepository = new PatientRepository(em);
         DoctorRepository doctorRepository = new DoctorRepository(em);

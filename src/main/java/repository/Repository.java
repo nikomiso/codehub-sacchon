@@ -19,6 +19,7 @@ public abstract class Repository<T, K> {
             entityManager.persist(t);
             entityManager.getTransaction().commit();
         } catch (ConstraintViolationException e) {
+            //TODO: Show message to client side. (For now Postman)
             System.out.println("Already registered!");
         } catch (Exception e) {
             e.printStackTrace();

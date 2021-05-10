@@ -37,6 +37,8 @@ public class CarbRepresentation {
     }
 
     public Carb createCarb() {
+
+        //TODO: Change it - No need of DB
         EntityManager em = JpaUtil.getEntityManager();
         CarbRepository carbRepository = new CarbRepository(em);
         Carb carb = new Carb();

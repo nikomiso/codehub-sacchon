@@ -9,6 +9,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class ResourceUtils {
+    //TODO: A patient should be able to CRUD only it's own data. Now a patient can add data to a different patient.
+    // SEE i.e. class PatientGlucoseListResource
     public static void checkRole(ServerResource serverResource, String role) throws AuthorizationException {
         if (!serverResource.isInRole(role)) {
             throw new AuthorizationException("You're not authorized to send this call.");

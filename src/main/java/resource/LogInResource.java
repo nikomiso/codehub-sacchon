@@ -19,6 +19,7 @@ public class LogInResource extends ServerResource {
 
     @Get
     public List<Integer> logIn() {
+        //TODO: Change the numbering return. Not clear, difficult to debug
         String username = getQueryValue("username");
         String password = getQueryValue("password");
         List<Integer> result = new ArrayList<>(3);
