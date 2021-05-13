@@ -16,6 +16,7 @@ public class CustomRouter {
         this.application = application;
     }
 
+    // TODO: Reduce the numbers of the endpoints and make them simpler
 
     public Router publicResources() {
         Router router = new Router();
