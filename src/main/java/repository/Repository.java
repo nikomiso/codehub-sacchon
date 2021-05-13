@@ -49,6 +49,16 @@ public abstract class Repository<T, K> {
         }
     }
 
+    //TODO: Implement result set pagination
+    //  to be implemented.
+    public List<T> getByPage() {
+        try {
+            //JPQL
+            return entityManager.createQuery("from " + getClassName()).getResultList();
+        } catch (Exception e) {
+            return null;
+        }
+    }
 
     // Update
     public T update(T t) {
