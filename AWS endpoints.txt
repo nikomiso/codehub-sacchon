@@ -1,0 +1,5 @@
+AWS - Public DNS​:
+ec2-13-59-3-121.us-east-2.compute.amazonaws.com​
+
+​Amazon RDS – SQL Server Endpoint​:
+pfizersacchon.c3fw7ocmqcmk.us-east-2.rds.amazonaws.com​

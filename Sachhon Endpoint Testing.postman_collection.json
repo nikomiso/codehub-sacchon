@@ -1,0 +1,1799 @@
+{
+	"info": {
+		"_postman_id": "3cac2fd4-40dc-4a12-9d35-90177679bbb4",
+		"name": "Sachhon Endpoint Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/ping",
+							"protocol": "http",
+							"host": [
+								"ec2-3-17-187-155",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "9000",
+							"path": [
+								"v1",
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"John\",\r\n    \"password\": \"js123\",\r\n    \"name\": \"John Show\",\r\n    \"address\": \"Beyond the wall\",\r\n    \"email\": \"john@test.gr\",\r\n    \"age\": \"23\",\r\n    \"sex\": \"Male\",\r\n    \"doctorId\": 1,\r\n    \"dateRegistered\": \"2021-05-13\",\r\n    \"consultationChanged\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/register",
+							"protocol": "http",
+							"host": [
+								"ec2-3-17-187-155",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "9000",
+							"path": [
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "123asd",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "nikolaos",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/login",
+							"protocol": "http",
+							"host": [
+								"ec2-3-17-187-155",
+								"us-east-2",
+								"compute",
+								"amazonaws",
+								"com"
+							],
+							"port": "9000",
+							"path": [
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Protected",
+			"item": [
+				{
+					"name": "Patient",
+					"item": [
+						{
+							"name": "Patient Carb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patient/23/carb/1",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patient",
+										"23",
+										"carb",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patient Settings",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patientSettings/23",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patientSettings",
+										"23"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Patient Carb",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"carb\": 200,\r\n    \"date\": \"2021-05-11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patient/23/carb/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patient",
+										"23",
+										"carb",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Patient Glucose",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"glucose\": 100,\r\n    \"date\": \"2021-05-11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patient/23/glucose/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patient",
+										"23",
+										"glucose",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patient Glucose",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patient/23/glucose/3",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patient",
+										"23",
+										"glucose",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Patient Consultation",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"2021-05-11\",\r\n    \"medicationName\": \"flu shot\",\r\n    \"dosage\": 3,\r\n    \"comment\": \"Need of another dosage\",\r\n    \"patientId\": 23,\r\n    \"doctorId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patient/23/consultation/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patient",
+										"23",
+										"consultation",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Patient Consultation",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patient/23/consultation/2",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patient",
+										"23",
+										"consultation",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Patient daily average Carb",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patientCarbDailyAverage/22?start=12-03-2021&end=01-04-2021",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patientCarbDailyAverage",
+										"22"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "12-03-2021"
+										},
+										{
+											"key": "end",
+											"value": "01-04-2021"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Patient daily Carb",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patientCarbAverage/23?start=12-03-2021&end=01-04-2021",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patientCarbAverage",
+										"23"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "12-03-2021"
+										},
+										{
+											"key": "end",
+											"value": "01-04-2021"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Patient average Glucose",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patientGlucoseAverage/23?start=12-03-2021&end=01-04-2021",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patientGlucoseAverage",
+										"23"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "12-03-2021"
+										},
+										{
+											"key": "end",
+											"value": "01-04-2021"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Doctor",
+					"item": [
+						{
+							"name": "Doctor  view specific patient",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/1/patient/23",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"1",
+										"patient",
+										"23"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor view patient list",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/1/patient/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"1",
+										"patient",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor view Patients' carb",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/22/carb/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"22",
+										"carb",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor view Patients' glucose",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/23/glucose/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"23",
+										"glucose",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor view Patients' consultation list",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctorPatient/23/consultation/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctorPatient",
+										"23",
+										"consultation",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor view Patients' specific consultation",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctorPatient/23/consultation/1",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctorPatient",
+										"23",
+										"consultation",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctors' Patient list need consultation",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/1/needConsultationPatients/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"1",
+										"needConsultationPatients",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctors' specific Patient need consultation",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/1/needConsultationPatient/23",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"1",
+										"needConsultationPatient",
+										"23"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor view complete consultation list",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/1/consultation/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"1",
+										"consultation",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctor view specific consultation",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/1/consultation/2",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"1",
+										"consultation",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctors' unconsulted Patient List",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/1/unconsultedPatients/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"1",
+										"unconsultedPatients",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Doctors' specific unconsulted Patient",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "d123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "doctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/1/unconsultedPatient/21",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"1",
+										"unconsultedPatient",
+										"21"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Chief Doctor",
+					"item": [
+						{
+							"name": "Register Doctor",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{    \r\n    \"username\": \"doctor\",\r\n    \"password\": \"d123\",\r\n    \"name\": \"Dr. Lorem\",\r\n    \"address\": \"Thessaloniki metro area\",\r\n    \"email\": \"test@mail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register Chief Doctor",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123asd",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "nikolaos",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n    \"username\": \"cdoctor\",\r\n    \"password\": \"c123\",\r\n    \"name\": \"Chief Dr. Ipsum\",\r\n    \"address\": \"Athens metro area\",\r\n    \"email\": \"info@test.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/chiefDoctor",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"chiefDoctor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Chief Doctor data",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/chiefDoctor/1",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"chiefDoctor",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Patient list",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patient",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patient"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View specific Doctor",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctor/1",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctor",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Carb list",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/carb",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"carb"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View specific Carb",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/carb/1",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"carb",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Glucose list",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/glucose",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"glucose"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View specific Glucose",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "Veiw Consultation list",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/consultation",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"consultation"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View specific Consultation",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/consultation/1",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"consultation",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Patient needing consultation",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/reportUnconsultedPatient/",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"reportUnconsultedPatient",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Patient's Carb",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/reportPatientCarb/23?period=05/03/2021",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"reportPatientCarb",
+										"23"
+									],
+									"query": [
+										{
+											"key": "period",
+											"value": "05/03/2021"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Patient's Glucose",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/reportDoctorConsultation/23?period=05/03/2021",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"reportDoctorConsultation",
+										"23"
+									],
+									"query": [
+										{
+											"key": "period",
+											"value": "05/03/2021"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View Patient's Consultation",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/reportDoctorConsultation/1?period=30/03/2021",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"reportDoctorConsultation",
+										"1"
+									],
+									"query": [
+										{
+											"key": "period",
+											"value": "30/03/2021"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View inactive Patient",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/patientInactive?period=30/03/2021",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"patientInactive"
+									],
+									"query": [
+										{
+											"key": "period",
+											"value": "30/03/2021"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View inactive Doctor",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "c123",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "cdoctor",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://ec2-3-17-187-155.us-east-2.compute.amazonaws.com:9000/v1/doctorInactive?period=30/03/2021",
+									"protocol": "http",
+									"host": [
+										"ec2-3-17-187-155",
+										"us-east-2",
+										"compute",
+										"amazonaws",
+										"com"
+									],
+									"port": "9000",
+									"path": [
+										"v1",
+										"doctorInactive"
+									],
+									"query": [
+										{
+											"key": "period",
+											"value": "30/03/2021"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
